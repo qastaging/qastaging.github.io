@@ -1,1 +1,1 @@
-importScripts('https://cdn.pushcrew.com/sw/ffsw-318ef0bb52ef4c6854dcbeea30040db6.js');
+importScripts('https://cdn.pushcrew.com/sw/ffsw-d58d2dafdb53c120462ba830a2c2574c.js');
