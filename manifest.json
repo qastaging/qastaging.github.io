@@ -1,6 +1,6 @@
 {
-    "name": "testnative",
-    "short_name": "testnative",
+    "name": "HTTPS-fixed",
+    "short_name": "HTTPS-fixed",
     "icons": [{
         "src": "/logo_192_by_192.png",
         "sizes": "192x192",
