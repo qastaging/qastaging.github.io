@@ -14,38 +14,21 @@
     })(window,document);
 </script>
 
-<script type="text/javascript">
-window._pcq = window._pcq || [];
-_pcq.push(['APIReady', callbackOnAPIReady]); //will execute callback function when PushCrew API is ready
-
-_pcq.push(['subscriptionSuccessCallback',callbackOnSuccessfulSubscription]); //registers callback function to be called when user gets successfully subscribed
-
-function callbackOnAPIReady() {
-    //now api is ready
-    _pcq.push(['addSubscriberToSegment', 'homepage', callbackForAddToSegment]);
-}
-
-function callbackOnSuccessfulSubscription(subscriberId, values) {
-    //user just got subscribed
-    _pcq.push(['addSubscriberToSegment', 'homepage', callbackForAddToSegment]);
-}
-
-function callbackForAddToSegment(response) {
-    if(response === -1) {
-        console.log('User is not a subscriber or has blocked notifications');
-    }
-  
-    if(response === false) {
-        console.log('Segment name provided is not valid. Maximum length of segment name can be 30 chars and it can only contain alphanumeric characters, underscore and dash.');
-    }
-  
-    if(response === true) {
-        console.log('User got added to the segment successfully. Now you may run any code you wish to execute after user gets added to segment successfully');
-    }
-}
-</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5JZVDM');</script>
+<!-- End Google Tag Manager -->
 </head>
+
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5JZVDM"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 <h1>QA staging</h1>
 <p>Click on Allow/Yes to subscribe to push notifications by PushCrew</p>
 </body>
