@@ -1,6 +1,6 @@
 {
-    "name": "Test HTTPS SN",
-    "short_name": "Test HTTPS SN",
+    "name": "testhttps",
+    "short_name": "testhttps",
     "icons": [{
         "src": "/logo_192_by_192.png",
         "sizes": "192x192",
