@@ -14,13 +14,22 @@
     })(window,document);
 </script>
 
+<script type="text/javascript">
 window._pcq = window._pcq || [];
+_pcq.push(['subscriptionSuccessCallback',callbackFunctionOnSuccessfulSubscription]); //registers callback function to be called when user gets successfully subscribed
 
-window._pcq.push(['triggerOptIn',{subscriberSegment: 'homepage'}]);//Calls triggerOptIn with segment as 'homepage'
+function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
+    console.log('User got successfully subscribed.');
 
-window._pcq.push(['triggerOptIn',{subscriberSegment: 'homepage', httpWindowOnly: true}]); //Calls triggerOptIn with segment as 'homepage' and with child window only. Custom Opt-in will not open in this case.
+    console.log(subscriberId); //will output the user's subscriberId
 
-window._pcq.push(['triggerOptIn',{httpWindowOnly: true}]); //Calls triggerOptIn with default segment(global) and with child window only. Custom Opt-in will not open in this case.
+    console.log(values.status); // SUBSCRIBED or ALREADYSUBSCRIBED
+
+    console.log(values.message) // 'User has subscribed to push notifications.' or 'User is already subscribed to push notifications.'
+
+    console.log('Now you may run code which should be executed once user gets successfully subscribed.');
+}
+</script>
 
 <h1>QA Website</h1>
 <br><p>Click on Allow/Yes to subscribe to push notifications by PushCrew</p>
