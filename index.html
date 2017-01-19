@@ -14,6 +14,14 @@
     })(window,document);
 </script>
 
+window._pcq = window._pcq || [];
+
+window._pcq.push(['triggerOptIn',{subscriberSegment: 'homepage'}]);//Calls triggerOptIn with segment as 'homepage'
+
+window._pcq.push(['triggerOptIn',{subscriberSegment: 'homepage', httpWindowOnly: true}]); //Calls triggerOptIn with segment as 'homepage' and with child window only. Custom Opt-in will not open in this case.
+
+window._pcq.push(['triggerOptIn',{httpWindowOnly: true}]); //Calls triggerOptIn with default segment(global) and with child window only. Custom Opt-in will not open in this case.
+
 <h1>QA Website</h1>
 <br><p>Click on Allow/Yes to subscribe to push notifications by PushCrew</p>
 </body>
