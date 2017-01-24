@@ -16,26 +16,8 @@
 
 <script type="text/javascript">
 
-_pcq.push(['APIReady', callbackFunction]);
+window._pcq.push(['triggerOptIn',{subscriberSegment: 'homepage', modal: {text: 'Get instant alerts from our website. Please subscribe.', blackenBackground: true}}]); //Calls triggerOptIn with custom text, blackened background and segment as 'homepage'
 
-//some code here
-
-function callbackFunction() {
-      console.log(pushcrew.subscriberId); // will return something like this if current user is a subscriber '1c5d546172cfb4be65a8d51b047c4804'
-
-  console.log(pushcrew.subscriberId); // will return false(boolean) if user is not subscribed to push notifications
-
-  console.log(pushcrew.subscriberId); // will return -1(integer) if user has blocked push notifications from your website   
-}
-
-if(pushcrew.isAPIReady) 
-{
-    console.log(pushcrew.subscriberId); // will return something like this if current user is a subscriber '1c5d546172cfb4be65a8d51b047c4804'
-
-  console.log(pushcrew.subscriberId); // will return false(boolean) if user is not subscribed to push notifications
-
-  console.log(pushcrew.subscriberId); // will return -1(integer) if user has blocked push notifications from your website   
-}
 </script>
 
 <h1>QA Website</h1>
