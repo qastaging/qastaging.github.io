@@ -31,7 +31,6 @@ function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
     console.log('Now you may run code which should be executed once user gets successfully subscribed.');
 }
 
-window._pcq = window._pcq || [];
 _pcq.push(['subscriptionFailureCallback',callbackFunctionOnFailedSubscription]); //registers callback function to be called when user gets successfully subscribed
 
 function callbackFunctionOnFailedSubscription(values) {
