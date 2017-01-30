@@ -22,12 +22,12 @@ _pcq.push(['subscriptionSuccessCallback',callbackOnSuccessfulSubscription]); //r
 
 function callbackOnAPIReady() {
     //now api is ready
-    _pcq.push(['addSubscriberToSegment', 'homepage', callbackForAddToSegment]);
+    _pcq.push(['addSubscriberToSegment', 'HP', callbackForAddToSegment]);
 }
 
 function callbackOnSuccessfulSubscription(subscriberId, values) {
     //user just got subscribed
-    _pcq.push(['addSubscriberToSegment', 'hom  epage', callbackForAddToSegment]);
+    _pcq.push(['addSubscriberToSegment', 'HP', callbackForAddToSegment]);
 }
 
 function callbackForAddToSegment(response) {
@@ -44,27 +44,27 @@ function callbackForAddToSegment(response) {
     }
 }
 
-window._pcq = window._pcq || [];
+// window._pcq = window._pcq || [];
 
-_pcq.push(['APIReady', callbackOnAPIReady]); //will execute callback function when PushCrew API is ready
+// _pcq.push(['APIReady', callbackOnAPIReady]); //will execute callback function when PushCrew API is ready
 
-function callbackOnAPIReady() {
-    _pcq.push(['removeSubscriberFromSegment', 'homepage', callbackForRemoveFromSegment]);  
-}
+// function callbackOnAPIReady() {
+//     _pcq.push(['removeSubscriberFromSegment', 'homepage', callbackForRemoveFromSegment]);  
+// }
 
-function callbackForRemoveFromSegment(response) {
-    if(response === -1) {
-        console.log('User is not a subscriber or has blocked notifications');
-    }
+// function callbackForRemoveFromSegment(response) {
+//     if(response === -1) {
+//         console.log('User is not a subscriber or has blocked notifications');
+//     }
   
-    if(response === false) {
-        console.log('Segment name provided is not valid. Maximum length of segment name can be 30 chars and it can only contain alphanumeric characters, underscore and dash.');
-    }
+//     if(response === false) {
+//         console.log('Segment name provided is not valid. Maximum length of segment name can be 30 chars and it can only contain alphanumeric characters, underscore and dash.');
+//     }
   
-    if(response === true) {
-        console.log('User got removed from the segment successfully. Now you may run any code you wish to execute after user gets removed from segment successfully');
-    }
-}
+//     if(response === true) {
+//         console.log('User got removed from the segment successfully. Now you may run any code you wish to execute after user gets removed from segment successfully');
+//     }
+// }
 </script>
 
 <h1>QA Website.</h1>
