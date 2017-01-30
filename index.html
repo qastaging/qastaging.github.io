@@ -15,10 +15,24 @@
 </script>
 
 <script type="text/javascript">
-window._pcq.push(['triggerOptIn',{subscriberSegment: 'homepage', httpWindowOnly: true}]);
-</script>
+window._pcq = window._pcq || [];
+_pcq.push(['subscriptionSuccessCallback',callbackFunctionOnSuccessfulSubscription]); //registers callback function to be called when user gets successfully subscribed
 
-<h1>QA Website. Add subscriber to a segment</h1>
+function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
+    console.log('User got successfully subscribed.');
+
+    console.log(subscriberId); //will output the user's subscriberId
+
+    console.log(values.status); // SUBSCRIBED or ALREADYSUBSCRIBED
+
+    console.log(values.message) // 'User has subscribed to push notifications.' or 'User is already subscribed to push notifications.'
+
+    console.log('Now you may run code which should be executed once user gets successfully subscribed.');
+}</script>
+
+<h1>QA Website.</h1>
+<pre>
+Subscription Successful/Failure Callbacks</pre>
 <br><p>Click on Allow/Yes to subscribe to push notifications by PushCrew</p>
 </body>
 </html>
