@@ -16,35 +16,31 @@
 </script>
 
 <script type="text/javascript">
+
 window._pcq = window._pcq || [];
 _pcq.push(['APIReady', callbackOnAPIReady]); //will execute callback function when PushCrew API is ready
 
 _pcq.push(['subscriptionSuccessCallback',callbackOnSuccessfulSubscription]); //registers callback function to be called when user gets successfully subscribed
 
+function addToAppropriateSegment() {
+    if(window.location.href.indexOf("category1") > -1) {
+        _pcq.push(['addSubscriberToSegment', 'category1']);
+    }
+    else if(window.location.href.indexOf("category2") > -1) {
+        _pcq.push(['addSubscriberToSegment', 'category2']);
+    }
+    else if(window.location.href.indexOf("category3") > -1) {
+        _pcq.push(['addSubscriberToSegment', 'category3']);
+    }
+}
+
 function callbackOnAPIReady() {
-    //now api is ready
-    _pcq.push(['addSubscriberToSegment', 'checing', callbackForAddToSegment]);
+   addToAppropriateSegment();
 }
 
 function callbackOnSuccessfulSubscription(subscriberId, values) {
-    //user just got subscribed
-    _pcq.push(['addSubscriberToSegment', 'checking', callbackForAddToSegment]);
-}
-
-function callbackForAddToSegment(response) {
-    if(response === -1) {
-        console.log('User is not a subscriber or has blocked notifications');
-    }
-  
-    if(response === false) {
-        console.log('Segment name provided is not valid. Maximum length of segment name can be 30 chars and it can only contain alphanumeric characters, underscore and dash.');
-    }
-  
-    if(response === true) {
-        console.log('User got added to the segment successfully. Now you may run any code you wish to execute after user gets added to segment successfully');
-    }
-}
-</script>
+   addToAppropriateSegment();
+}</script>
 
 <h1>QA Website. Add subscriber to a segment</h1>
 <br><p>Click on Allow/Yes to subscribe to push notifications by PushCrew</p>
