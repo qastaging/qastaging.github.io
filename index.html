@@ -17,24 +17,19 @@
 <script type="text/javascript">
 
 
-_pcq.push(['APIReady', callbackOnAPIReady]); //will execute callback function when PushCrew API is ready
+window._pcq = window._pcq || [];
+_pcq.push(['subscriptionSuccessCallback',callbackFunctionOnSuccessfulSubscription]); //registers callback function to be called when user gets successfully subscribed
 
-function callbackOnAPIReady() {
-    _pcq.push(['removeSubscriberFromSegment', 'nagesh1', callbackForRemoveFromSegment]);  
-}
+function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
+    console.log('User got successfully subscribed.');
 
-function callbackForRemoveFromSegment(response) {
-    if(response === -1) {
-        console.log('User is not a subscriber or has blocked notifications');
-    }
-  
-    if(response === false) {
-        console.log('Segment name provided is not valid. Maximum length of segment name can be 30 chars and it can only contain alphanumeric characters, underscore and dash.');
-    }
-  
-    if(response === true) {
-        console.log('User got removed from the segment successfully. Now you may run any code you wish to execute after user gets removed from segment successfully');
-    }
+    console.log(subscriberId); //will output the user's subscriberId
+
+    console.log(values.status); // SUBSCRIBED or ALREADYSUBSCRIBED
+
+    console.log(values.message) // 'User has subscribed to push notifications.' or 'User is already subscribed to push notifications.'
+
+    console.log('Now you may run code which should be executed once user gets successfully subscribed.');
 }
 </script>
 
