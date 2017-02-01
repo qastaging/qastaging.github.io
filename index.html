@@ -8,29 +8,22 @@
         s=u.createElement('script');
         s.type='text/javascript';
         s.async=true;
-        s.src='https://cdn.pushcrewstaging.com/js/59fb01f82de34472ff90e842cfa8be65.js';
+        s.src='https://cdn.pushcrewstaging.com/js/885606ec93de53500f5e75c4bd17415d.js';
         h=u.getElementsByTagName('script')[0];
         h.parentNode.insertBefore(s,h);
     })(window,document);
 </script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 window._pcq = window._pcq || [];
+
 _pcq.push(['APIReady', callbackOnAPIReady]); //will execute callback function when PushCrew API is ready
 
-_pcq.push(['subscriptionSuccessCallback',callbackOnSuccessfulSubscription]); //registers callback function to be called when user gets successfully subscribed
-
 function callbackOnAPIReady() {
-    //now api is ready
-    _pcq.push(['addSubscriberToSegment', 'see-this', callbackForAddToSegment]);
+    _pcq.push(['removeSubscriberFromSegment', 'homepage', callbackForRemoveFromSegment]);  
 }
 
-function callbackOnSuccessfulSubscription(subscriberId, values) {
-    //user just got subscribed
-    _pcq.push(['addSubscriberToSegment', 'see-this', callbackForAddToSegment]);
-}
-
-function callbackForAddToSegment(response) {
+function callbackForRemoveFromSegment(response) {
     if(response === -1) {
         console.log('User is not a subscriber or has blocked notifications');
     }
@@ -40,11 +33,11 @@ function callbackForAddToSegment(response) {
     }
   
     if(response === true) {
-        console.log('User got added to the segment successfully. Now you may run any code you wish to execute after user gets added to segment successfully');
+        console.log('User got removed from the segment successfully. Now you may run any code you wish to execute after user gets removed from segment successfully');
     }
 }
 </script>
-
+ -->
 <h1>QA Website.</h1>
 <pre>
 Add Subscriber to a Particular Segment
