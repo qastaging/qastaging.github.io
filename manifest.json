@@ -1,6 +1,6 @@
 {
-    "name": "HP One",
-    "short_name": "HP One",
+    "name": "testStg2",
+    "short_name": "testStg2",
     "icons": [{
         "src": "/logo_192_by_192.png",
         "sizes": "192x192",
