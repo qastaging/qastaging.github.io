@@ -1,6 +1,6 @@
 {
-    "name": "Summary-Premium",
-    "short_name": "Summary-Premium",
+    "name": "test-my",
+    "short_name": "test-my",
     "icons": [{
         "src": "/logo_192_by_192.png",
         "sizes": "192x192",
@@ -8,6 +8,6 @@
     }],
     "start_url": "/",
     "display": "standalone",
-    "gcm_sender_id": "655215898416",
+    "gcm_sender_id": "597858669315",
     "gcm_user_visible_only": true
 }
