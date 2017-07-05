@@ -20,7 +20,7 @@ _pcq.push(['APIReady', callbackOnAPIReady]); //will execute callback function wh
 
 function callbackOnAPIReady() {
     //now api is ready
-    _pcq.push(['addSubscriberToSegment', 'segment-1 segment-2 segment-3 segment-4', callbackForAddToSegment]);
+    _pcq.push(['addSubscriberToSegment', 'segment-1 segment-2 segment-3', callbackForAddToSegment]);
 }
 
 function callbackForAddToSegment(response) {
