@@ -8,7 +8,7 @@
         s=u.createElement('script');
         s.type='text/javascript';
         s.async=true;
-        s.src='https://cdn.pushcrewstaging.com/js/59fb01f82de34472ff90e842cfa8be65.js';
+        s.src='https://cdn.pushcrewstaging.com/js/2b84a37c3688387019916f3166eaf8a9.js';
         h=u.getElementsByTagName('script')[0];
         h.parentNode.insertBefore(s,h);
     })(window,document);
@@ -18,9 +18,16 @@
 window._pcq = window._pcq || [];
 _pcq.push(['APIReady', callbackOnAPIReady]); //will execute callback function when PushCrew API is ready
 
+_pcq.push(['subscriptionSuccessCallback',callbackOnSuccessfulSubscription]); //registers callback function to be called when user gets successfully subscribed
+
 function callbackOnAPIReady() {
     //now api is ready
-    _pcq.push(['addSubscriberToSegment', 'tester', callbackForAddToSegment]);
+    _pcq.push(['addSubscriberToSegment', 'homepage', callbackForAddToSegment]);
+}
+
+function callbackOnSuccessfulSubscription(subscriberId, values) {
+    //user just got subscribed
+    _pcq.push(['addSubscriberToSegment', 'homepage', callbackForAddToSegment]);
 }
 
 function callbackForAddToSegment(response) {
