@@ -23,12 +23,12 @@ _pcq.push(['subscriptionSuccessCallback',callbackOnSuccessfulSubscription]); //r
 
 function callbackOnAPIReady() {
     //now api is ready
-    _pcq.push(['addSubscriberToSegment', 'os Browser', callbackForAddToSegment]);
+    _pcq.push(['addSubscriberToSegment', 'FFonly', callbackForAddToSegment]);
 }
 
 function callbackOnSuccessfulSubscription(subscriberId, values) {
     //user just got subscribed
-    _pcq.push(['addSubscriberToSegment', 'os Browser', callbackForAddToSegment]);
+    _pcq.push(['addSubscriberToSegment', 'FFonly', callbackForAddToSegment]);
 }
 
 function callbackForAddToSegment(response) {
