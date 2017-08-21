@@ -1,6 +1,6 @@
 {
-    "name": "UL-sub",
-    "short_name": "UL-sub",
+    "name": "my-https",
+    "short_name": "my-https",
     "icons": [{
         "src": "/logo_192_by_192.png",
         "sizes": "192x192",
